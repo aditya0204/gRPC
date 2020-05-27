@@ -1,0 +1,29 @@
+syntax ="proto3";
+
+package numbers;
+
+option  go_package = ".;numberspb";
+
+message NumRequest {
+   int32   Num1  =1;
+   int32   Num2  =2;
+}
+
+message NumResponse {
+   int32   Sum  =1;
+}
+
+message PrimeRequest{
+	int32  Num =1;
+}
+
+message PrimeResponse{
+	int32  Num =1;
+}
+
+service SumService {
+  rpc  numbers(NumRequest) returns (NumResponse){};
+  rpc prime(PrimeRequest) returns (stream PrimeResponse){};
+
+}
+
