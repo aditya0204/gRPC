@@ -21,9 +21,33 @@ message PrimeResponse{
 	int32  Num =1;
 }
 
-service SumService {
-  rpc  numbers(NumRequest) returns (NumResponse){};
-  rpc prime(PrimeRequest) returns (stream PrimeResponse){};
+message AverageRequest{
+	int32  Num =1;
+}
 
+message AverageResponse{
+	int32 Result =1;
+}
+
+message MaxRequest {
+	repeated int32 Numbers = 1;
+}
+
+message MaxResponse{
+	int32  Result  =1;
+}
+
+service SumService {
+  // Unary API	
+  rpc  numbers(NumRequest) returns (NumResponse){};
+  
+  //Server Streaming API
+  rpc prime(PrimeRequest) returns (stream PrimeResponse){};
+ 
+  //Client Streaming API
+  rpc computeAverage(stream AverageRequest) returns (AverageResponse){};
+
+  //BiDirectional Streaming API
+  rpc maxNumber(stream MaxRequest) returns (stream MaxResponse);
 }
 

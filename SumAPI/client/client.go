@@ -6,6 +6,7 @@ import (
 	numberspb "gRPC/SumAPI/numbers"
 	"google.golang.org/grpc"
 	"io"
+	"time"
 )
 
 
@@ -21,7 +22,78 @@ func main(){
 	c:= numberspb.NewSumServiceClient(cc)
 
 	//doUnary(c)
-	doServerStreaming(c)
+	//doServerStreaming(c)
+	//doClientStreaming(c)
+	doBiDiStreaming(c)
+}
+
+func doBiDiStreaming(c numberspb.SumServiceClient) {
+	arr := [][]int32{
+		{0, 1, 2, 3} ,   /*  initializers for row indexed by 0 */
+		{4, 52, 6, 7} ,   /*  initializers for row indexed by 1 */
+		{18, 9, 10, 11} ,  /*  initializers for row indexed by 2 */
+	}
+	stream, err := c.MaxNumber(context.Background())
+	if err!=nil{
+		fmt.Println(err)
+	}
+	ch := make(chan bool)
+
+	go func() {
+		for _, el := range arr{
+			req:=&numberspb.MaxRequest{Numbers:el}
+			err=stream.Send(req)
+			if err!=nil{
+				fmt.Println(err)
+			}
+            time.Sleep(1*time.Second)
+		}
+	}()
+	go func() {
+		for{
+			res, err2 := stream.Recv()
+			if err==io.EOF{
+				fmt.Println("End of response.")
+			}
+
+			if err2 !=nil{
+				fmt.Println(err2)
+			}
+			fmt.Println("All response received.")
+			fmt.Println("Max Number is ",res.Result)
+		}
+	}()
+
+
+
+
+
+	<-ch
+
+}
+
+func doClientStreaming(c numberspb.SumServiceClient) {
+	arr := []int32{1,2,3,4,5,6}
+	stream,err:=c.ComputeAverage(context.Background())
+
+	for _, el := range  arr{
+		req := &numberspb.AverageRequest{Num:el}
+		if err!=nil{
+			fmt.Println(err)
+		}else{
+			stream.Send(req)
+		}
+		time.Sleep(1*time.Second)
+	}
+
+	response,err:=stream.CloseAndRecv()
+	if err!=nil{
+		fmt.Println(err)
+	}else{
+		fmt.Println("Average is ",response.Result)
+	}
+
+
 }
 
 func doServerStreaming(c numberspb.SumServiceClient) {

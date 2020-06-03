@@ -225,6 +225,194 @@ func (x *PrimeResponse) GetNum() int32 {
 	return 0
 }
 
+type AverageRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Num int32 `protobuf:"varint,1,opt,name=Num,proto3" json:"Num,omitempty"`
+}
+
+func (x *AverageRequest) Reset() {
+	*x = AverageRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_numbers_proto_msgTypes[4]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *AverageRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AverageRequest) ProtoMessage() {}
+
+func (x *AverageRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_numbers_proto_msgTypes[4]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AverageRequest.ProtoReflect.Descriptor instead.
+func (*AverageRequest) Descriptor() ([]byte, []int) {
+	return file_numbers_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *AverageRequest) GetNum() int32 {
+	if x != nil {
+		return x.Num
+	}
+	return 0
+}
+
+type AverageResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Result int32 `protobuf:"varint,1,opt,name=Result,proto3" json:"Result,omitempty"`
+}
+
+func (x *AverageResponse) Reset() {
+	*x = AverageResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_numbers_proto_msgTypes[5]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *AverageResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AverageResponse) ProtoMessage() {}
+
+func (x *AverageResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_numbers_proto_msgTypes[5]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AverageResponse.ProtoReflect.Descriptor instead.
+func (*AverageResponse) Descriptor() ([]byte, []int) {
+	return file_numbers_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *AverageResponse) GetResult() int32 {
+	if x != nil {
+		return x.Result
+	}
+	return 0
+}
+
+type MaxRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Numbers []int32 `protobuf:"varint,1,rep,packed,name=Numbers,proto3" json:"Numbers,omitempty"`
+}
+
+func (x *MaxRequest) Reset() {
+	*x = MaxRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_numbers_proto_msgTypes[6]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *MaxRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*MaxRequest) ProtoMessage() {}
+
+func (x *MaxRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_numbers_proto_msgTypes[6]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use MaxRequest.ProtoReflect.Descriptor instead.
+func (*MaxRequest) Descriptor() ([]byte, []int) {
+	return file_numbers_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *MaxRequest) GetNumbers() []int32 {
+	if x != nil {
+		return x.Numbers
+	}
+	return nil
+}
+
+type MaxResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Result int32 `protobuf:"varint,1,opt,name=Result,proto3" json:"Result,omitempty"`
+}
+
+func (x *MaxResponse) Reset() {
+	*x = MaxResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_numbers_proto_msgTypes[7]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *MaxResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*MaxResponse) ProtoMessage() {}
+
+func (x *MaxResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_numbers_proto_msgTypes[7]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use MaxResponse.ProtoReflect.Descriptor instead.
+func (*MaxResponse) Descriptor() ([]byte, []int) {
+	return file_numbers_proto_rawDescGZIP(), []int{7}
+}
+
+func (x *MaxResponse) GetResult() int32 {
+	if x != nil {
+		return x.Result
+	}
+	return 0
+}
+
 var File_numbers_proto protoreflect.FileDescriptor
 
 var file_numbers_proto_rawDesc = []byte{
@@ -239,16 +427,35 @@ var file_numbers_proto_rawDesc = []byte{
 	0x10, 0x0a, 0x03, 0x4e, 0x75, 0x6d, 0x18, 0x01, 0x20, 0x01, 0x28, 0x05, 0x52, 0x03, 0x4e, 0x75,
 	0x6d, 0x22, 0x21, 0x0a, 0x0d, 0x50, 0x72, 0x69, 0x6d, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
 	0x73, 0x65, 0x12, 0x10, 0x0a, 0x03, 0x4e, 0x75, 0x6d, 0x18, 0x01, 0x20, 0x01, 0x28, 0x05, 0x52,
-	0x03, 0x4e, 0x75, 0x6d, 0x32, 0x80, 0x01, 0x0a, 0x0a, 0x53, 0x75, 0x6d, 0x53, 0x65, 0x72, 0x76,
-	0x69, 0x63, 0x65, 0x12, 0x36, 0x0a, 0x07, 0x6e, 0x75, 0x6d, 0x62, 0x65, 0x72, 0x73, 0x12, 0x13,
-	0x2e, 0x6e, 0x75, 0x6d, 0x62, 0x65, 0x72, 0x73, 0x2e, 0x4e, 0x75, 0x6d, 0x52, 0x65, 0x71, 0x75,
-	0x65, 0x73, 0x74, 0x1a, 0x14, 0x2e, 0x6e, 0x75, 0x6d, 0x62, 0x65, 0x72, 0x73, 0x2e, 0x4e, 0x75,
-	0x6d, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x3a, 0x0a, 0x05, 0x70,
-	0x72, 0x69, 0x6d, 0x65, 0x12, 0x15, 0x2e, 0x6e, 0x75, 0x6d, 0x62, 0x65, 0x72, 0x73, 0x2e, 0x50,
-	0x72, 0x69, 0x6d, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x6e, 0x75,
-	0x6d, 0x62, 0x65, 0x72, 0x73, 0x2e, 0x50, 0x72, 0x69, 0x6d, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f,
-	0x6e, 0x73, 0x65, 0x22, 0x00, 0x30, 0x01, 0x42, 0x0d, 0x5a, 0x0b, 0x2e, 0x3b, 0x6e, 0x75, 0x6d,
-	0x62, 0x65, 0x72, 0x73, 0x70, 0x62, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x03, 0x4e, 0x75, 0x6d, 0x22, 0x22, 0x0a, 0x0e, 0x41, 0x76, 0x65, 0x72, 0x61, 0x67, 0x65, 0x52,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x10, 0x0a, 0x03, 0x4e, 0x75, 0x6d, 0x18, 0x01, 0x20,
+	0x01, 0x28, 0x05, 0x52, 0x03, 0x4e, 0x75, 0x6d, 0x22, 0x29, 0x0a, 0x0f, 0x41, 0x76, 0x65, 0x72,
+	0x61, 0x67, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x16, 0x0a, 0x06, 0x52,
+	0x65, 0x73, 0x75, 0x6c, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x05, 0x52, 0x06, 0x52, 0x65, 0x73,
+	0x75, 0x6c, 0x74, 0x22, 0x26, 0x0a, 0x0a, 0x4d, 0x61, 0x78, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
+	0x74, 0x12, 0x18, 0x0a, 0x07, 0x4e, 0x75, 0x6d, 0x62, 0x65, 0x72, 0x73, 0x18, 0x01, 0x20, 0x03,
+	0x28, 0x05, 0x52, 0x07, 0x4e, 0x75, 0x6d, 0x62, 0x65, 0x72, 0x73, 0x22, 0x25, 0x0a, 0x0b, 0x4d,
+	0x61, 0x78, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x16, 0x0a, 0x06, 0x52, 0x65,
+	0x73, 0x75, 0x6c, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x05, 0x52, 0x06, 0x52, 0x65, 0x73, 0x75,
+	0x6c, 0x74, 0x32, 0x85, 0x02, 0x0a, 0x0a, 0x53, 0x75, 0x6d, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63,
+	0x65, 0x12, 0x36, 0x0a, 0x07, 0x6e, 0x75, 0x6d, 0x62, 0x65, 0x72, 0x73, 0x12, 0x13, 0x2e, 0x6e,
+	0x75, 0x6d, 0x62, 0x65, 0x72, 0x73, 0x2e, 0x4e, 0x75, 0x6d, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
+	0x74, 0x1a, 0x14, 0x2e, 0x6e, 0x75, 0x6d, 0x62, 0x65, 0x72, 0x73, 0x2e, 0x4e, 0x75, 0x6d, 0x52,
+	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x3a, 0x0a, 0x05, 0x70, 0x72, 0x69,
+	0x6d, 0x65, 0x12, 0x15, 0x2e, 0x6e, 0x75, 0x6d, 0x62, 0x65, 0x72, 0x73, 0x2e, 0x50, 0x72, 0x69,
+	0x6d, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x6e, 0x75, 0x6d, 0x62,
+	0x65, 0x72, 0x73, 0x2e, 0x50, 0x72, 0x69, 0x6d, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
+	0x65, 0x22, 0x00, 0x30, 0x01, 0x12, 0x47, 0x0a, 0x0e, 0x63, 0x6f, 0x6d, 0x70, 0x75, 0x74, 0x65,
+	0x41, 0x76, 0x65, 0x72, 0x61, 0x67, 0x65, 0x12, 0x17, 0x2e, 0x6e, 0x75, 0x6d, 0x62, 0x65, 0x72,
+	0x73, 0x2e, 0x41, 0x76, 0x65, 0x72, 0x61, 0x67, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x1a, 0x18, 0x2e, 0x6e, 0x75, 0x6d, 0x62, 0x65, 0x72, 0x73, 0x2e, 0x41, 0x76, 0x65, 0x72, 0x61,
+	0x67, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x28, 0x01, 0x12, 0x3a,
+	0x0a, 0x09, 0x6d, 0x61, 0x78, 0x4e, 0x75, 0x6d, 0x62, 0x65, 0x72, 0x12, 0x13, 0x2e, 0x6e, 0x75,
+	0x6d, 0x62, 0x65, 0x72, 0x73, 0x2e, 0x4d, 0x61, 0x78, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x1a, 0x14, 0x2e, 0x6e, 0x75, 0x6d, 0x62, 0x65, 0x72, 0x73, 0x2e, 0x4d, 0x61, 0x78, 0x52, 0x65,
+	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x28, 0x01, 0x30, 0x01, 0x42, 0x0d, 0x5a, 0x0b, 0x2e, 0x3b,
+	0x6e, 0x75, 0x6d, 0x62, 0x65, 0x72, 0x73, 0x70, 0x62, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f,
+	0x33,
 }
 
 var (
@@ -263,20 +470,28 @@ func file_numbers_proto_rawDescGZIP() []byte {
 	return file_numbers_proto_rawDescData
 }
 
-var file_numbers_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
+var file_numbers_proto_msgTypes = make([]protoimpl.MessageInfo, 8)
 var file_numbers_proto_goTypes = []interface{}{
-	(*NumRequest)(nil),    // 0: numbers.NumRequest
-	(*NumResponse)(nil),   // 1: numbers.NumResponse
-	(*PrimeRequest)(nil),  // 2: numbers.PrimeRequest
-	(*PrimeResponse)(nil), // 3: numbers.PrimeResponse
+	(*NumRequest)(nil),      // 0: numbers.NumRequest
+	(*NumResponse)(nil),     // 1: numbers.NumResponse
+	(*PrimeRequest)(nil),    // 2: numbers.PrimeRequest
+	(*PrimeResponse)(nil),   // 3: numbers.PrimeResponse
+	(*AverageRequest)(nil),  // 4: numbers.AverageRequest
+	(*AverageResponse)(nil), // 5: numbers.AverageResponse
+	(*MaxRequest)(nil),      // 6: numbers.MaxRequest
+	(*MaxResponse)(nil),     // 7: numbers.MaxResponse
 }
 var file_numbers_proto_depIdxs = []int32{
 	0, // 0: numbers.SumService.numbers:input_type -> numbers.NumRequest
 	2, // 1: numbers.SumService.prime:input_type -> numbers.PrimeRequest
-	1, // 2: numbers.SumService.numbers:output_type -> numbers.NumResponse
-	3, // 3: numbers.SumService.prime:output_type -> numbers.PrimeResponse
-	2, // [2:4] is the sub-list for method output_type
-	0, // [0:2] is the sub-list for method input_type
+	4, // 2: numbers.SumService.computeAverage:input_type -> numbers.AverageRequest
+	6, // 3: numbers.SumService.maxNumber:input_type -> numbers.MaxRequest
+	1, // 4: numbers.SumService.numbers:output_type -> numbers.NumResponse
+	3, // 5: numbers.SumService.prime:output_type -> numbers.PrimeResponse
+	5, // 6: numbers.SumService.computeAverage:output_type -> numbers.AverageResponse
+	7, // 7: numbers.SumService.maxNumber:output_type -> numbers.MaxResponse
+	4, // [4:8] is the sub-list for method output_type
+	0, // [0:4] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
 	0, // [0:0] is the sub-list for extension extendee
 	0, // [0:0] is the sub-list for field type_name
@@ -336,6 +551,54 @@ func file_numbers_proto_init() {
 				return nil
 			}
 		}
+		file_numbers_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*AverageRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_numbers_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*AverageResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_numbers_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*MaxRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_numbers_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*MaxResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -343,7 +606,7 @@ func file_numbers_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_numbers_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   4,
+			NumMessages:   8,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
@@ -369,8 +632,14 @@ const _ = grpc.SupportPackageIsVersion6
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type SumServiceClient interface {
+	// Unary API
 	Numbers(ctx context.Context, in *NumRequest, opts ...grpc.CallOption) (*NumResponse, error)
+	//Server Streaming API
 	Prime(ctx context.Context, in *PrimeRequest, opts ...grpc.CallOption) (SumService_PrimeClient, error)
+	//Client Streaming API
+	ComputeAverage(ctx context.Context, opts ...grpc.CallOption) (SumService_ComputeAverageClient, error)
+	//BiDirectional Streaming API
+	MaxNumber(ctx context.Context, opts ...grpc.CallOption) (SumService_MaxNumberClient, error)
 }
 
 type sumServiceClient struct {
@@ -422,10 +691,81 @@ func (x *sumServicePrimeClient) Recv() (*PrimeResponse, error) {
 	return m, nil
 }
 
+func (c *sumServiceClient) ComputeAverage(ctx context.Context, opts ...grpc.CallOption) (SumService_ComputeAverageClient, error) {
+	stream, err := c.cc.NewStream(ctx, &_SumService_serviceDesc.Streams[1], "/numbers.SumService/computeAverage", opts...)
+	if err != nil {
+		return nil, err
+	}
+	x := &sumServiceComputeAverageClient{stream}
+	return x, nil
+}
+
+type SumService_ComputeAverageClient interface {
+	Send(*AverageRequest) error
+	CloseAndRecv() (*AverageResponse, error)
+	grpc.ClientStream
+}
+
+type sumServiceComputeAverageClient struct {
+	grpc.ClientStream
+}
+
+func (x *sumServiceComputeAverageClient) Send(m *AverageRequest) error {
+	return x.ClientStream.SendMsg(m)
+}
+
+func (x *sumServiceComputeAverageClient) CloseAndRecv() (*AverageResponse, error) {
+	if err := x.ClientStream.CloseSend(); err != nil {
+		return nil, err
+	}
+	m := new(AverageResponse)
+	if err := x.ClientStream.RecvMsg(m); err != nil {
+		return nil, err
+	}
+	return m, nil
+}
+
+func (c *sumServiceClient) MaxNumber(ctx context.Context, opts ...grpc.CallOption) (SumService_MaxNumberClient, error) {
+	stream, err := c.cc.NewStream(ctx, &_SumService_serviceDesc.Streams[2], "/numbers.SumService/maxNumber", opts...)
+	if err != nil {
+		return nil, err
+	}
+	x := &sumServiceMaxNumberClient{stream}
+	return x, nil
+}
+
+type SumService_MaxNumberClient interface {
+	Send(*MaxRequest) error
+	Recv() (*MaxResponse, error)
+	grpc.ClientStream
+}
+
+type sumServiceMaxNumberClient struct {
+	grpc.ClientStream
+}
+
+func (x *sumServiceMaxNumberClient) Send(m *MaxRequest) error {
+	return x.ClientStream.SendMsg(m)
+}
+
+func (x *sumServiceMaxNumberClient) Recv() (*MaxResponse, error) {
+	m := new(MaxResponse)
+	if err := x.ClientStream.RecvMsg(m); err != nil {
+		return nil, err
+	}
+	return m, nil
+}
+
 // SumServiceServer is the server API for SumService service.
 type SumServiceServer interface {
+	// Unary API
 	Numbers(context.Context, *NumRequest) (*NumResponse, error)
+	//Server Streaming API
 	Prime(*PrimeRequest, SumService_PrimeServer) error
+	//Client Streaming API
+	ComputeAverage(SumService_ComputeAverageServer) error
+	//BiDirectional Streaming API
+	MaxNumber(SumService_MaxNumberServer) error
 }
 
 // UnimplementedSumServiceServer can be embedded to have forward compatible implementations.
@@ -437,6 +777,12 @@ func (*UnimplementedSumServiceServer) Numbers(context.Context, *NumRequest) (*Nu
 }
 func (*UnimplementedSumServiceServer) Prime(*PrimeRequest, SumService_PrimeServer) error {
 	return status.Errorf(codes.Unimplemented, "method Prime not implemented")
+}
+func (*UnimplementedSumServiceServer) ComputeAverage(SumService_ComputeAverageServer) error {
+	return status.Errorf(codes.Unimplemented, "method ComputeAverage not implemented")
+}
+func (*UnimplementedSumServiceServer) MaxNumber(SumService_MaxNumberServer) error {
+	return status.Errorf(codes.Unimplemented, "method MaxNumber not implemented")
 }
 
 func RegisterSumServiceServer(s *grpc.Server, srv SumServiceServer) {
@@ -482,6 +828,58 @@ func (x *sumServicePrimeServer) Send(m *PrimeResponse) error {
 	return x.ServerStream.SendMsg(m)
 }
 
+func _SumService_ComputeAverage_Handler(srv interface{}, stream grpc.ServerStream) error {
+	return srv.(SumServiceServer).ComputeAverage(&sumServiceComputeAverageServer{stream})
+}
+
+type SumService_ComputeAverageServer interface {
+	SendAndClose(*AverageResponse) error
+	Recv() (*AverageRequest, error)
+	grpc.ServerStream
+}
+
+type sumServiceComputeAverageServer struct {
+	grpc.ServerStream
+}
+
+func (x *sumServiceComputeAverageServer) SendAndClose(m *AverageResponse) error {
+	return x.ServerStream.SendMsg(m)
+}
+
+func (x *sumServiceComputeAverageServer) Recv() (*AverageRequest, error) {
+	m := new(AverageRequest)
+	if err := x.ServerStream.RecvMsg(m); err != nil {
+		return nil, err
+	}
+	return m, nil
+}
+
+func _SumService_MaxNumber_Handler(srv interface{}, stream grpc.ServerStream) error {
+	return srv.(SumServiceServer).MaxNumber(&sumServiceMaxNumberServer{stream})
+}
+
+type SumService_MaxNumberServer interface {
+	Send(*MaxResponse) error
+	Recv() (*MaxRequest, error)
+	grpc.ServerStream
+}
+
+type sumServiceMaxNumberServer struct {
+	grpc.ServerStream
+}
+
+func (x *sumServiceMaxNumberServer) Send(m *MaxResponse) error {
+	return x.ServerStream.SendMsg(m)
+}
+
+func (x *sumServiceMaxNumberServer) Recv() (*MaxRequest, error) {
+	m := new(MaxRequest)
+	if err := x.ServerStream.RecvMsg(m); err != nil {
+		return nil, err
+	}
+	return m, nil
+}
+
 var _SumService_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "numbers.SumService",
 	HandlerType: (*SumServiceServer)(nil),
@@ -496,6 +894,17 @@ var _SumService_serviceDesc = grpc.ServiceDesc{
 			StreamName:    "prime",
 			Handler:       _SumService_Prime_Handler,
 			ServerStreams: true,
+		},
+		{
+			StreamName:    "computeAverage",
+			Handler:       _SumService_ComputeAverage_Handler,
+			ClientStreams: true,
+		},
+		{
+			StreamName:    "maxNumber",
+			Handler:       _SumService_MaxNumber_Handler,
+			ServerStreams: true,
+			ClientStreams: true,
 		},
 	},
 	Metadata: "numbers.proto",
